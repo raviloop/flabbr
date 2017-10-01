@@ -1,3 +1,9 @@
 page-tabs {
+	.tabs-md .tab-button[aria-selected=true] .tab-button-icon,.tabs-md .tab-button[aria-selected=true] .tab-button-text{
+		color: #FFD700;
+	}		
 
+	.tabs-md-dark .tabbar{
+		background-color: #0D0D0D;
+	}
 }

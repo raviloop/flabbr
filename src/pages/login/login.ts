@@ -4,6 +4,7 @@ import { IonicPage, NavController, ToastController } from 'ionic-angular';
 
 import { User } from '../../providers/providers';
 import { MainPage } from '../pages';
+import { SignupPage } from '../pages';
 
 @IonicPage()
 @Component({
@@ -46,5 +47,9 @@ export class LoginPage {
       });
       toast.present();
     });
+  }
+
+  signup(){
+    this.navCtrl.push(SignupPage);
   }
 }

@@ -1,5 +1,8 @@
 {
   "name": "flabbr",
-  "app_id": "",
-  "type": "ionic-angular"
+  "app_id": "d4cf4580",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
 }

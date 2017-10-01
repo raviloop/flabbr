@@ -1,19 +1,27 @@
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>{{ 'LOGIN_TITLE' | translate }}</ion-title>
-  </ion-navbar>
+<!--   <ion-navbar>
+  <ion-title>{{ 'LOGIN_TITLE' | translate }}</ion-title>
+</ion-navbar> -->
 
 </ion-header>
 
 
-<ion-content>
-  <form (submit)="doLogin()">
-    <ion-list>
+<ion-content margin-top>
+  
+  <div class="header-text" text-center>
+      flabbr.
+  </div>
+
+<div class="subheader-text" text-center>
+  flabbrgast of music
+</div>
+  <form (submit)="doLogin()" class="login-form">
+    <ion-list class="form-inputs" no-lines>
 
       <ion-item>
-        <ion-label fixed>{{ 'EMAIL' | translate }}</ion-label>
-        <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
+        <!-- <ion-label fixed>{{ 'EMAIL' | translate }}</ion-label> -->
+        <ion-input type="email" [(ngModel)]="account.email" name="email" placeholder="Username/Email"></ion-input>
       </ion-item>
 
       <!--
@@ -26,13 +34,27 @@
       -->
 
       <ion-item>
-        <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label>
-        <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
+        <!-- <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label> -->
+        <ion-input type="password" 
+        [(ngModel)]="account.password" name="password" placeholder="Password"></ion-input>
       </ion-item>
 
-      <div padding>
-        <button ion-button color="primary" block>{{ 'LOGIN_BUTTON' | translate }}</button>
+      <div padding text-center>
+        <button ion-button color="primary">LOGIN</button>
       </div>
+
+      <div text-center class="afterbtn-text">
+      Don't have any account? 
+       <span (click)="signup()">SIGN UP</span>
+       </div>
+
+       <div class="fb-txt" text-center>
+      Connect With Facebook 
+       </div>
+
+       <div padding text-center>
+  <button ion-button color="primary" outline><ion-icon name="logo-facebook"></ion-icon> &nbsp;&nbsp;  SIGN UP</button>
+       </div>
 
     </ion-list>
   </form>
