@@ -1,18 +1,33 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{ item.name }}</ion-title>
+    <ion-title>{{ playlist.name }}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content>
-  <div class="item-profile" text-center #profilePic [style.background-image]="'url(' + item.profilePic + ')'">
-  </div>
+ <!--  <div class="item-profile" text-center #profilePic [style.background-image]="'url(' + item.profilePic + ')'">
+ </div>
+ 
+ <div class="item-detail" padding>
+   <h2>{{item.name}}</h2>
+   <p>{{item.about}}</p>
+ </div> -->
 
-  <div class="item-detail" padding>
-    <h2>{{item.name}}</h2>
-    <p>{{item.about}}</p>
-  </div>
+<ion-list>
+    <ion-item-sliding *ngFor="let song of playlist.songs">
+      <button ion-item (click)="playSong(song)">
+        <ion-thumbnail item-start>
+      <img [src]="imgSrc">
+        </ion-thumbnail>
+        <h2>{{song.name}}</h2>
+        <h3>{{song.duration}}</h3>
+        <!-- <h3>{{song.url}}</h3> -->
+      </button>
+    </ion-item-sliding>
+  </ion-list>
+
+
 </ion-content>

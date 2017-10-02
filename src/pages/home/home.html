@@ -1,5 +1,5 @@
 <ion-header>
-	<!-- <progress-bar [progress]="currentTrack.progress"></progress-bar> -->
+	<!-- <progress-bar [progress]="70"></progress-bar> -->
   <ion-navbar>
     <ion-title>Discover</ion-title>
   </ion-navbar>
@@ -31,10 +31,12 @@
 	<ion-list no-lines>
 		<button detail-none ion-item *ngFor="let track of tracks" 
 		(click)="startOgg(track)">
-		<ion-avatar item-left>
+		<ion-thumbnail item-start>
 			<img [src]="'https://api.adorable.io/avatars/75/' + track.artist">
+		
+		</ion-thumbnail>
 			
-		</ion-avatar>
+		
 		<h2>{{track.artist}}</h2>
 		<p>{{track.title}}</p>
 	</button>

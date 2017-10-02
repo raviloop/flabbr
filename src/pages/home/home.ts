@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { Http } from '@angular/http';
+
 import { StreamingMedia, StreamingAudioOptions } from '@ionic-native/streaming-media';
 
 /**
@@ -25,7 +27,16 @@ import { StreamingMedia, StreamingAudioOptions } from '@ionic-native/streaming-m
  	baseUrl : any;
  	thumbnail: any;
 
- 	constructor(public navCtrl: NavController, public navParams: NavParams,private streamingMedia: StreamingMedia) {
+ 	constructor(public navCtrl: NavController, public navParams: NavParams,private streamingMedia: StreamingMedia, public http: Http) {
+
+
+ 		/*this.http.get('http://localhost:8000/allplaylist').map(res => res.json()).subscribe(data => {
+ 			console.log(data);
+ 			this.tracks = data;
+ 		});*/
+
+
+
  		this.tracks = [
  		{title: 'Something About You', artist: 'ODESZA', playing: false, progress: 0, link: 'assets/songs/ogg/CashCash-HowToLoveFeat_SofiaReyes.ogg'},
  		{title: 'Run', artist: 'Allison Wonderland', playing: false, progress: 0, link: 'assets/songs/ogg/CleanBanditJessGlynne_RealLoveTheChainsmokersRemix.ogg'},
@@ -65,6 +76,8 @@ import { StreamingMedia, StreamingAudioOptions } from '@ionic-native/streaming-m
  		this.streamingMedia.playAudio(songlink, options);
  	}
 
+ 	
+
  	playTrack(track){
 
  		// First stop any currently playing tracks
@@ -90,7 +103,7 @@ import { StreamingMedia, StreamingAudioOptions } from '@ionic-native/streaming-m
  		let songlink = this.baseUrl+track.link;
  		console.log(songlink)
  		this.streamingMedia.playAudio(songlink, options);
- 		
+
  		// Simulate track playing
  		this.progressInterval = setInterval(() => {
 
